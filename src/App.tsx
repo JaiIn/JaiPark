@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import MainPage from './container/main/MainPage';
 
 function App() {
   return (
     <Container>
-      
+      <MainPage/>
     </Container>
   );
 }
