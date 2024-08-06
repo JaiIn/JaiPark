@@ -1,17 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import MainPage from './container/main/MainPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainGamePage from './container/NumberTest/MainGamePage';
 
 function App() {
   return (
-    <Container>
-      <MainPage/>
-    </Container>
+    <Router>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/game' element = {<MainGamePage/>}/>
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
 
-const Container = styled.div`
-max-width: 1440px;
-`

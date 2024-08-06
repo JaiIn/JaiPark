@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Wrapper } from './CommonStyled';
+import { useNavigate } from 'react-router-dom';
 
 const CommentHeader = () => {
+
+    const navigate = useNavigate();
+    const handleIconClick = () => {
+        navigate('/');
+    }
+
     return (
         <Wrapper>
             <Headers>
-                <Icons/>
+                <Icons onClick={handleIconClick}/>
                 <Banner/>
             </Headers>
         </Wrapper>
@@ -26,7 +33,7 @@ const Icons = styled.div`
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background-image: url('/Images/gamza.png');
+    background-image: url('/Images/JPlogo.png');
     background-size: cover;
     background-position: center;
 `

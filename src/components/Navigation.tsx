@@ -1,20 +1,32 @@
 import React from 'react';
 import { Wrapper } from './CommonStyled';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navigation = () => {
+
+    const GameNavi = useNavigate();
+    const handleToGame = () => {
+        GameNavi('/game');
+    }
+
     return (
         <Wrapper>
             <Container>
                 <MenuBar>
                     <MenuItem>
                         <div>기능들</div>
-                        <SubMenu>계산기</SubMenu>
+                        <SubMenu>
+                            <div>계산기</div>
+                            <div onClick={handleToGame}>게임</div>
+                        </SubMenu>
                     </MenuItem>
                     <MenuItem>
                         <div>도움말</div>
-                        <SubMenu>아직 도움말이 없어요</SubMenu>
+                        <SubMenu>
+                            <div>dd</div>
+                        </SubMenu>
                     </MenuItem>
                     <MenuItem>
                         <div>뭐넣지</div>
@@ -66,4 +78,11 @@ position: absolute;
 top: 100%;
 transform: translateY(-20px);
 transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+div{
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover{
+        background-color: red;
+        color: white;
+    }
+}
 `
